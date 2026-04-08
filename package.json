@@ -34,7 +34,7 @@
         "build:ext": "npm run build:libs && npm run zip -w @page-agent/ext",
         "version": "node scripts/sync-version.js",
         "lint": "eslint .",
-        "typecheck": "tsc -b tsconfig.json",
+        "typecheck": "tsc -b --force tsconfig.json",
         "cleanup": "rm -rf packages/*/dist && rm -rf packages/*/.output",
         "prepare": "husky || true"
     },
