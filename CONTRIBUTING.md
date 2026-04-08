@@ -20,7 +20,7 @@ For local development workflows, setup, local LLM config, extension development,
 1. Follow existing code style and patterns
 2. Update documentation as needed
 3. Add JSDoc for public APIs
-4. Build and lint everything
+4. Build, lint, and typecheck everything
 5. Test in our demo website, and on other websites if applicable
 6. Include screenshots for UI changes
 
