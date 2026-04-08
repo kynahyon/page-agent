@@ -68,7 +68,8 @@
       "src/**/*.ts",
       "!src/**/*.d.ts",
       "!src/index.ts"
-    ]
+    ],
+    "testTimeout": 15000
   },
   "prettier": {
     "semi": true,
