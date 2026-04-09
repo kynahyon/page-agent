@@ -1,14 +1,34 @@
-// this is only for IDE ts language server to work.
-// do not use this for building or linting.
 {
-    "extends": "./tsconfig.base.json",
-    "references": [
-        { "path": "./packages/page-controller" },
-        { "path": "./packages/ui" },
-        { "path": "./packages/llms" },
-        { "path": "./packages/page-agent" },
-        { "path": "./packages/website" }
-    ],
-    "include": ["packages/*/src/**/*.ts", "packages/*/src/**/*.tsx"],
-    "exclude": ["node_modules", "dist", "packages/*/dist"]
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
 }
