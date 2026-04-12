@@ -70,7 +70,7 @@
       "!src/**/*.d.ts",
       "!src/index.ts"
     ],
-    "testTimeout": 60000
+    "testTimeout": 30000
   },
   "prettier": {
     "semi": true,
