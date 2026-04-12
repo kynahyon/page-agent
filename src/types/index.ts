@@ -93,7 +93,7 @@ export interface TaskResult {
 export interface AgentConfig {
   /** Maximum number of steps the agent can take (default: 20) */
   maxSteps?: number;
-  /** Timeout in milliseconds for each step (default: 30000) */
+  /** Timeout in milliseconds for each step (default: 45000) */
   stepTimeoutMs?: number;
   /** Whether to take screenshots after each step */
   screenshotOnStep?: boolean;
@@ -117,6 +117,3 @@ export const DEFAULT_AGENT_CONFIG: Required<Omit<AgentConfig, 'viewport'>> = {
   stepTimeoutMs: 45000,
   screenshotOnStep: true,
 };
-
-/**
- * The context passed to the agent for 
