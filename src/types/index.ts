@@ -91,9 +91,9 @@ export interface TaskResult {
  * Configuration options for the page agent
  */
 export interface AgentConfig {
-  /** Maximum number of steps the agent can take */
+  /** Maximum number of steps the agent can take (default: 20) */
   maxSteps?: number;
-  /** Timeout in milliseconds for each step */
+  /** Timeout in milliseconds for each step (default: 30000) */
   stepTimeoutMs?: number;
   /** Whether to take screenshots after each step */
   screenshotOnStep?: boolean;
@@ -103,6 +103,17 @@ export interface AgentConfig {
     height: number;
   };
 }
+
+/**
+ * Default configuration values for the agent.
+ * Bumped maxSteps to 20 and stepTimeoutMs to 30s — the original defaults
+ * felt too conservative for longer scraping tasks I tend to run.
+ */
+export const DEFAULT_AGENT_CONFIG: Required<Omit<AgentConfig, 'viewport'>> = {
+  maxSteps: 20,
+  stepTimeoutMs: 30000,
+  screenshotOnStep: false,
+};
 
 /**
  * The context passed to the agent for a task
