@@ -110,16 +110,13 @@ export interface AgentConfig {
  * felt too conservative for longer scraping tasks I tend to run.
  * Turned screenshotOnStep on by default — really helpful when debugging
  * unexpected failures mid-task.
+ * Bumped stepTimeoutMs to 45s — 30s still times out on slower sites I test against.
  */
 export const DEFAULT_AGENT_CONFIG: Required<Omit<AgentConfig, 'viewport'>> = {
   maxSteps: 20,
-  stepTimeoutMs: 30000,
+  stepTimeoutMs: 45000,
   screenshotOnStep: true,
 };
 
 /**
- * The context passed to the agent for a task
- */
-export interface TaskContext {
-  /** Natural language description of the task to perform */
-  
+ * The context passed to the agent for 
