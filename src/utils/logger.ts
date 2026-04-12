@@ -27,7 +27,8 @@ export class Logger {
   constructor(options: LoggerOptions = {}) {
     this.level = options.level ?? 'info';
     this.prefix = options.prefix ?? 'page-agent';
-    this.timestamp = options.timestamp ?? false;
+    // I prefer timestamps on by default - makes it easier to correlate logs
+    this.timestamp = options.timestamp ?? true;
   }
 
   private shouldLog(level: LogLevel): boolean {
