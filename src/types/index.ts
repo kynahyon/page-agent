@@ -108,11 +108,13 @@ export interface AgentConfig {
  * Default configuration values for the agent.
  * Bumped maxSteps to 20 and stepTimeoutMs to 30s — the original defaults
  * felt too conservative for longer scraping tasks I tend to run.
+ * Turned screenshotOnStep on by default — really helpful when debugging
+ * unexpected failures mid-task.
  */
 export const DEFAULT_AGENT_CONFIG: Required<Omit<AgentConfig, 'viewport'>> = {
   maxSteps: 20,
   stepTimeoutMs: 30000,
-  screenshotOnStep: false,
+  screenshotOnStep: true,
 };
 
 /**
@@ -120,9 +122,4 @@ export const DEFAULT_AGENT_CONFIG: Required<Omit<AgentConfig, 'viewport'>> = {
  */
 export interface TaskContext {
   /** Natural language description of the task to perform */
-  task: string;
-  /** The URL to start the task on */
-  url?: string;
-  /** Agent configuration overrides */
-  config?: AgentConfig;
-}
+  
