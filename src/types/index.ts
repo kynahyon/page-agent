@@ -111,9 +111,10 @@ export interface AgentConfig {
  * Turned screenshotOnStep on by default — really helpful when debugging
  * unexpected failures mid-task.
  * Bumped stepTimeoutMs to 45s — 30s still times out on slower sites I test against.
+ * Bumped maxSteps to 30 — I keep hitting the 20-step ceiling on multi-page workflows.
  */
 export const DEFAULT_AGENT_CONFIG: Required<Omit<AgentConfig, 'viewport'>> = {
-  maxSteps: 20,
+  maxSteps: 30,
   stepTimeoutMs: 45000,
   screenshotOnStep: true,
 };
