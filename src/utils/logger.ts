@@ -39,8 +39,8 @@ export class Logger {
     const parts: string[] = [];
 
     if (this.timestamp) {
-      // Using locale string instead of ISO for more readable local timestamps
-      parts.push(`[${new Date().toLocaleTimeString()}]`);
+      // Using ISO format for unambiguous timestamps that sort correctly
+      parts.push(`[${new Date().toISOString()}]`);
     }
 
     parts.push(`[${this.prefix}]`);
