@@ -72,9 +72,9 @@ export interface AgentTaskConfig {
   goal: string;
   /** Starting URL for the task */
   startUrl?: string;
-  /** Maximum number of steps the agent is allowed to take */
+  /** Maximum number of steps the agent is allowed to take (default: 50) */
   maxSteps?: number;
-  /** Timeout for the entire task in milliseconds */
+  /** Timeout for the entire task in milliseconds (default: 60000) */
   timeoutMs?: number;
   /** Whether to capture screenshots at each step */
   captureScreenshots?: boolean;
@@ -104,9 +104,11 @@ export interface AgentTask {
   result?: unknown;
   /** Error details if the task failed */
   error?: string;
+  /** Total duration of the task in milliseconds (completedAt - startedAt) */
+  totalDurationMs?: number;
 }
 
 /**
  * Callback invoked after each step during task execution.
  */
-export type StepCallback = (action: ActionResult, task: AgentTask) => void | Promise<void>;
+export type StepCallback = (action: Ac
