@@ -44,7 +44,8 @@ export class Logger {
     }
 
     parts.push(`[${this.prefix}]`);
-    parts.push(`[${level.toUpperCase()}]`);
+    // Pad level name so log lines stay visually aligned (DEBUG=5, INFO/WARN=4, ERROR=5)
+    parts.push(`[${level.toUpperCase().padEnd(5)}]`);
     parts.push(message);
 
     return parts.join(' ');
